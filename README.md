@@ -1,0 +1,1 @@
+# Code-Quiz-of-Inevitability
