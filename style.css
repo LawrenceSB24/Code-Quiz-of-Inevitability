@@ -1,0 +1,93 @@
+:root {
+    --border: 5px solid lightskyblue;
+    --sizing: 20px
+}
+
+* {
+    margin: auto;
+    padding: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin-top: 60px;
+    margin-left: auto;
+    padding: 20px;
+    background-image: url("https://api.time.com/wp-content/uploads/2017/04/2.gif");
+    background-size: cover;
+}
+
+
+.welcome {
+    text-align: center;
+    border: var(--border);
+    width: 50%;
+    background-color: darkturquoise;
+    color: rgb(4, 0, 255);
+    font-size: var(--sizing);
+    font-weight: bold;
+    box-shadow: 0 0 5px 2px black;
+}
+
+.starter {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 5px solid rgb(0, 162, 255);
+    width: 50%;
+    background-color: royalblue;
+    color: snow;
+    font-size: var(--sizing);
+    font-weight: bold;
+    box-shadow: 0 0 5px 2px black;
+}
+
+#question-txt {
+    text-align: left;
+    margin-top: 20px;
+    padding-top: 10px;
+    border: var(--border);
+    background-color: slategray;
+    color: turquoise;
+    font-weight: bolder;
+    font-size: var(--sizing);
+    width: 50%;
+    box-shadow: 0 0 5px 2px black;
+
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: 20px;
+    background-color: rgb(87, 0, 128);
+    color: blanchedalmond;
+    box-shadow: 0 0 2px 2px black;
+    font-size: 25px;
+}
+
+ul {
+    text-align: center;
+    list-style: none;
+}
+
+ul li {
+    padding: 10px;
+}
+
+#timer {
+    margin-bottom: 20px;
+    position: absolute;
+    top: 3%;
+    border: 2px solid rgb(0, 162, 255);
+    background-color: rgb(4, 0, 255);
+    color: rgb(225, 238, 255);
+    font-size: 20px;
+    font-weight: bolder;
+    width: fit-content;
+}
+
+.hide {
+    display: none;
+}
