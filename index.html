@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Welcome to the Code quiz!</title>
+</head>
+
+<body>
+
+    <main>
+        <div id="timer">
+            Timer:
+        </div>
+        
+
+        <div class="test" id="intro">
+            <h1 class="welcome">Well hello there!</h1>
+            <p class="starter">
+                Welcome to the code quiz. This is a test platform that will allow your
+                knowledge on the various aspects of the coding world. The topics will vary between
+                Javascript, HTML, CSS, and Web APIs. Though depending on how knowledgable you are,
+                There will also be a question or two on the Python programming language. To begin the quiz,
+                click on the start button below. Remember to have fun and you can replay this quiz for a
+                improved highscore. Good luck and may the odds ever be in your favor.
+            </p>
+
+            <button class="start" id="strt-btn">start</button>
+        </div>
+
+
+        <div id="question-container" class="hide">
+            <div id="question-txt"> Question: </div>
+            <div class="options">
+                <ul>
+                    <li><button id="A">A: </button></li>
+                    <li><button id="B">B: </button></li>
+                    <li><button id="C">C: </button></li>
+                    <li><button id="D">D: </button></li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <div id="stats" class="hide">
+            <div id="initials">Please enter your initials here: <input type="text"
+                    name="Please enter your initials here"></div>
+            <div id="highscore">Highscore: </div>
+        </div>
+
+        <div class="hide"><button id="rst-btn">Restart</button></div>
+
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>
