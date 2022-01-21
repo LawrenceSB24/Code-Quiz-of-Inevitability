@@ -25,3 +25,5 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
 ```
+## Status
+Ok, so a few things you will notice of the bat is that the timer still is not working properly and there is not display for the user score. I am still currently working on this and should have it fixed by tomorrow at the latest. Also a video demonstration will be included in the descriptiton.
