@@ -15,7 +15,7 @@ var answerB = document.getElementById("B");
 var answerC = document.getElementById("C");
 var answerD = document.getElementById("D");
 
-
+// Variable that targets the high score element
 var scoring = document.getElementById("highscore");
 
 // Variable that targets the timer element
@@ -23,7 +23,6 @@ var TimerEl = document.getElementById("timer");
 
 // Variable that targets the intro box.
 var Begin = document.getElementById("intro");
-
 
 
 //  Event listerners for the answer buttons
@@ -141,6 +140,7 @@ startBtn.addEventListener('click', beginQuiz);
 
 
 
+
 function beginQuiz() {
     console.log("Game has begun");
     Begin.classList.add("hide");
@@ -180,6 +180,8 @@ function time() {
 
 function End() {
     quizBox.classList.add("hide");
+    TimerEl.classList.add("hide");
+    clearInterval(timerInterval);
     highscore();
 }
 
@@ -211,11 +213,15 @@ function comparision(event) {
 
 
 function highscore() {
+    scoring.classList.remove("hide")
+    scoring.innerText = score
     initial = window.prompt("Please enter your initials: ");
     HighS = {
         Init: initial,
-        score: score
+        Score: score
     }
+
+    localStorage.setItem("high score". JSON.stringify(HighS));
 }
 
 function TimerC() {
