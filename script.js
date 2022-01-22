@@ -48,9 +48,8 @@ var correct_Q;
 
 // default counters for timer function
 var seconds;
+
 // Array that will contain questions and answers. Starting with one question as base line.
-
-
 var questions = [
     {
         question: "What is the purpose of Javascript?",
@@ -135,24 +134,24 @@ var questions = [
 
 ];
 
-// event listers for start, reset, and option buttons
+// event lister for start button that begins the quiz
 startBtn.addEventListener('click', beginQuiz);
 
 
-
+// Function below that allows the user to begin the quiz
 
 function beginQuiz() {
     console.log("Game has begun");
-    Begin.classList.add("hide");
-    quizBox.classList.remove("hide");
-    score = 0;
-    HighS = [];
+    Begin.classList.add("hide"); // When hit, the intro text and start button are removed
+    quizBox.classList.remove("hide"); // First question is displayed after intro dissapears
+    score = 0; // Initial starting score
+    HighS = []; // Array that will contain the final score (maybe be removed later)
     current_Q= 0;
     show_Q();
     time();
 }
 
-
+// Function that allows the population of the quiz and answer button text
 function show_Q() {
     quizQ.textContent = questions[current_Q].question;
     answerA.textContent = questions[current_Q].a;
@@ -163,7 +162,7 @@ function show_Q() {
 }
 
 
-
+// Function that governs the behavior of the timer
 function time() {
     seconds = 120;
     timerInterval = setInterval(function () {
@@ -178,6 +177,7 @@ function time() {
     console.log(End)
 }
 
+// Quiz end funtion that removes the quiz and displays the score (In a perfect world)
 function End() {
     quizBox.classList.add("hide");
     TimerEl.classList.add("hide");
@@ -185,17 +185,21 @@ function End() {
     highscore();
 }
 
+// Comparison function to govern if choice selected by the user is correct or incorrect
 function comparision(event) {
-
     if (event) {
         console.log(event.target);
         console.log(event.target.id);
     }
+
+    // If user chooses the correct answer, the timer remains normal and the next question pops up
     if (event.target.id === questions[current_Q].correct) {
         console.log("correct!");
         score++;
         TimerEl.innerText = "Timer: " + seconds;
         console.log(score);
+
+        // When user selects the wrong answer, time is subtracted and next question pops up
     } else {
         console.log("incorrect.");
         seconds -= 5;
@@ -203,6 +207,7 @@ function comparision(event) {
         TimerC();
     }
 
+    // Final question that ends the quiz when answered.
     if (questions[current_Q].question == "What data types are included in JS?") {
         End();
     } else {
@@ -211,7 +216,7 @@ function comparision(event) {
     }
 }
 
-
+// Function that generates the highscore and the user's initials
 function highscore() {
     scoring.classList.remove("hide")
     scoring.innerText = score
@@ -224,6 +229,7 @@ function highscore() {
     localStorage.setItem("high score". JSON.stringify(HighS));
 }
 
+// Function that checks when the timer hits 0 to end the game.
 function TimerC() {
     if (seconds <= 0) {
         clearInterval(seconds);
